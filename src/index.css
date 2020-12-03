@@ -1,10 +1,16 @@
 body{
-    display: flex;
-    justify-content: space-around;
+    
     background-color: black;
     color:white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     word-spacing: 2px;
+
+}
+#root {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
 }
 .card_info{
     margin-top: 5px;
@@ -12,14 +18,14 @@ body{
     text-align: center;
 }
 .card{
-    width:100%;
+    width:auto;
     height: auto;
 }
 .cards{
-    float: left;
+    max-width: 300px;
     box-shadow: 0 4px 8px 0 whitesmoke;
     transition: 0.3s;
-    margin: 10% 20px;
+    margin:50px 20px;
     
 }
 .cards:hover {
