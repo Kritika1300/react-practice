@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 function Card(props){
     console.log(props);
    return(
+     
        <div className = "cards">
            <div className = "card">
                <img src= {props.imgsrc}  style = {{height : '200px' , width :'300px'}} alt ="mypic" className="card_img"/>
@@ -15,6 +16,7 @@ function Card(props){
                </div>
            </div>
        </div>
+       
    );
 }
 export default Card;

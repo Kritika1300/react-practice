@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'
 import Card from './Cards';
 ReactDOM.render(
 <>
+<h1 className = 'heading_style'>List of most viewed Netflix series</h1>
+
 <Card imgsrc = "https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/TVSeries/Friends_4926700-FRIENDS._V392939166_RI_.jpg"
     title = " A Netflix Original Series"
     sname = "FRIENDS"
