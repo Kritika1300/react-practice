@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 const App = () => {
   return (<> 
-  <h1>Bootstrap in React Js</h1>
-  <button className = "btn btn-success">BOOTSTRAP</button>
+  <h1 className = "text-capitalize text-center mt-5 text-danger">Bootstrap in React Js</h1>
+  <center><button className = "btn btn-success">BOOTSTRAP</button></center>
   </>
   );
 };
