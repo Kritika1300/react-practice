@@ -1,0 +1,67 @@
+App.js...............................................
+import React,{createContext, useState} from 'react';
+import './App.css';
+import CompA from './CompA'
+const FirstName = createContext();
+const LastName = createContext();
+const App = () => {
+return (
+  <>
+  <FirstName.Provider value = {'Roloooo'}>
+  <LastName.Provider value = {'weeeeekkkk'}>
+  <CompA></CompA>
+  </LastName.Provider>
+  </FirstName.Provider>
+ 
+  </>
+);
+}
+export default App;
+export {FirstName, LastName};
+
+CompA.js...............................................
+import React,{useState} from 'react';
+import './App.css';
+import CompB from './CompB';
+const CompA = () => {
+return (
+  <>
+  <CompB/>
+  </>
+);
+}
+export default CompA;
+
+CompB.js...............................................
+import React,{useState} from 'react';
+import './App.css';
+import CompC from './CompC';
+const CompB = () => {
+return (
+  <>
+  <CompC/>
+  </>
+);
+}
+export default CompB;
+
+CompC.js...............................................
+
+import React,{useState} from 'react';
+import './App.css';
+import {FirstName, LastName} from './App';
+const CompC = () => {
+return (
+  <>
+  <FirstName.Consumer>{(fname) => {
+    return (
+          <LastName.Consumer>{(lname) =>{
+              return ( <h1>My name is {fname} {lname} </h1>);
+          }}</LastName.Consumer>
+        );
+  }}
+  </FirstName.Consumer>
+  </>
+);
+}
+export default CompC;
