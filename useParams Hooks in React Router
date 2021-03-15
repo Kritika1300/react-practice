@@ -1,0 +1,61 @@
+Menu.jsx
+import React from 'react';
+import {NavLink, Route} from 'react-router-dom';
+import "./index.css"
+const Menu = () => {
+return (
+  <> 
+  <div className = "menu_style">
+   <NavLink exact activeClassName  = "active_class" to = '/'>AboutUs</NavLink>
+   <NavLink exact activeClassName  = "active_class" to = '/service'>Services</NavLink>
+   <NavLink exact activeClassName  = "active_class" to = '/user/kritika/wohoo'>User</NavLink>
+   <NavLink exact  activeClassName  = "active_class" to = '/contact'>ContactUs</NavLink>
+   </div>
+  </>
+);
+}
+export default Menu;
+
+App.jsx
+import React from 'react';
+import Service from './Service';
+import Contact from './Contact';
+import About from './About';
+import {Route,Switch} from 'react-router-dom';
+import Error from './Error';
+import Menu from './Menu';
+import User from './User';
+const App = () => {
+const Name = () => {
+    return (<><h1>Name page</h1></>);
+};
+ return (
+<>
+<Menu />
+<Switch>
+    <Route exact path = '/' component = {About} />
+    <Route  exact path = '/contact' component= {Contact} />
+    <Route  path = '/contact/name' component= {Name} />
+    <Route path = "/user/:name/:lname" component = {User} />
+    <Route exact path = '/service' component = {() => <Service name = "Service page "/>} />
+    <Route component = {Error} />
+</Switch>
+{/* <About/>
+<Contact/> */}
+</>
+ );
+}
+export default App;
+
+User.jsx
+import React from 'react';
+import { useParams } from 'react-router';
+const User = () => {
+const {name,lname} = useParams();
+return (
+  <> 
+   <h1>I am the (username: {name} {lname}) page</h1>
+  </>
+);
+}
+export default User;
